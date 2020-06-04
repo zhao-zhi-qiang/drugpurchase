@@ -1,0 +1,54 @@
+.a {
+    background: url(../img/555.jpg);
+    background-repeat: no-repeat;
+    width: 100%;
+    background-size: cover;
+    height: 1000px;
+    position: absolute;
+}
+
+.b {
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 20px;
+}
+
+.c {
+    font-size: 20px;
+    display: inline-block;
+    color: white;
+    margin-left: 45px;
+    margin-top: 130px;
+    vertical-align: top;
+}
+
+.input {
+    height: 25px;
+    width: 130px;
+    border-radius: 20px;
+    border: 1px solid #000000;
+    font-size: 20px;
+    color: #000000;
+}
+
+.d {
+    margin-top: 20px;
+    background: #83bde8;
+    border: 1px solid #83bde8;
+    cursor: pointer;
+    font-size: 20px;
+
+}
+
+.e {
+    text-align:center;
+    padding-left: auto;
+    padding-top: 10px;
+}
+
+.g {
+    color: white;
+    text-align: center;
+    margin-top: 150px;
+}

@@ -1,0 +1,13 @@
+#配置端口
+server:
+  port: 8080
+#禁用thymeleaf的缓存
+spring:
+  thymeleaf:
+    cache: false
+
+  datasource:
+    url: jdbc:mysql://node3:3306/test?characterEncoding=utf8
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
