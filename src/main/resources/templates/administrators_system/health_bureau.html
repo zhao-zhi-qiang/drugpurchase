@@ -5,8 +5,9 @@
     <title>卫生局用户管理</title>
     <script src="layui/layui.js"></script>
     <link rel="stylesheet" href="layui/css/layui.css">
+    <script src="js/jQuery/jquery-2.2.3.min.js"></script>
     <script>
-        layui.use(['laypage', 'layer'], function() {
+        layui.use(['laypage', 'layer','form'], function() {
             var laypage = layui.laypage;
             layer = layui.layer;
             //自定义样式
@@ -16,6 +17,35 @@
                 , theme: '#1E9FFF'
             });
         })
+        /*添加页面弹出层*/
+        function addInformation() {
+            layer.open({
+                //layer提供了5种层类型。可传入的值有：0（信息框，默认）1（页面层）2（iframe层）3（加载层）4（tips层）
+                type:1,
+                title:['添加卫生局用户','font-size:18px;'],
+                area:['70%','70%'],
+                anim:5,
+                scrollbar: false,
+                content:$("#form_add")
+            })
+        }
+        /*修改页面弹出层*/
+        function editInformation(){
+            layer.open({
+                type:1,
+                title:['修改卫生局用户','font-size:18px;'],
+                area:['50%','50%'],
+                anim:5,
+                scrollbar:false,
+                content:$("#edit_add")
+            })
+        }
+        /*删除提示弹出框*/
+        function removeInformation() {
+            layer.confirm('确定删除吗',function (index){
+              layer.close(index);
+            })
+        }
     </script>
     <style>
         body{
@@ -64,7 +94,7 @@
             <button class="layui-btn layui-btn-normal layui-btn-lg" id="find">查询</button>
     </div>
     <div class="healthBureau_ops layui-btn-group">
-        <button class="layui-btn layui-btn-normal layui-btn-lg">添加</button>
+        <button class="layui-btn layui-btn-normal layui-btn-lg" onclick="addInformation()">添加</button>
         <button class="layui-btn layui-btn-normal layui-btn-lg">导出</button>
         <button class="layui-btn layui-btn-normal layui-btn-lg">导入</button>
     </div>
@@ -102,9 +132,9 @@
                     <td>100100</td>
                     <td>15632321547</td>
                     <td>2569322326@qq.com</td>
-                    <td style="color: #1E9FFF" href="">查看</td>
-                    <td style="color: #1E9FFF">修改</td>
-                    <td style="color: #1E9FFF">删除</td>
+                    <td style="color: #1E9FFF"><button class="layui-btn  layui-btn-normal layui-btn-sm" onclick="lookInformation()">查看</button></td>
+                    <td style="color: #1E9FFF"><button class="layui-btn  layui-btn-normal layui-btn-sm" onclick="editInformation()">修改</button></td>
+                    <td style="color: #1E9FFF"><button class="layui-btn layui-btn-sm layui-btn-danger" lay-event="del" onclick="removeInformation()">删除</button></td>
                 </tr>
                 <tr>
                     <td>0000</td>
@@ -141,9 +171,145 @@
       <!--  <legend>自定义主题 - 颜色随意定义</legend>-->
     </fieldset>
     <div id="demo2"></div>
-
-    <div class="layui-form-checkbox">
-    </div>
+    <!-- 添加表单-->
+        <form class="" id="form_add" style="display: none">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">用户账号</label>
+                    <div class="layui-input-block">
+                        <input class="layui-input" type="text" name="title" placeholder="请输入用户账号" style="width: 200px">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">用户名称</label>
+                    <div class="layui-input-block">
+                        <input class="layui-input" type="text" name="title" placeholder="请输入用户名称" style="width: 200px">
+                    </div>
+                </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">用户角色</label>
+                <div class="layui-input-block">
+                    <select name="city" lay-verify="required">
+                        <option value="">请选择</option>
+                        <option value="0">卫生局</option>
+                        <option value="1">卫生院</option>
+                        <option value="2">卫生室</option>
+                        <option value="3">供货商</option>
+                        <option value="4">监督机构</option>
+                    </select>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">所在单位</label>
+                <div class="layui-input-block">
+                    <input class="layui-input" type="text" name="title" placeholder="请输入所在单位" style="width: 200px">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">联系地址</label>
+                    <select name="p" lay-verify="required">
+                        <option value="">请选择省</option>
+                        <option value="0">北京</option>
+                        <option value="0">上海</option>
+                    </select>
+                    <select name="c" lay-verify="required">
+                        <option value="">请选择市</option>
+                        <option value="0">海淀区</option>
+                        <option value="0">朝阳区</option>
+                    </select>
+                    <select name="t" lay-verify="required">
+                        <option value="">请选择县</option>
+                        <option value="0">西二旗</option>
+                        <option value="0">上地</option>
+                    </select>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">详细地址</label>
+                <div class="layui-input-block">
+                    <input class="layui-input" type="text" name="title" placeholder="请输入详细地址 例如乡/村/门牌号" style="width: 200px">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">邮政编码</label>
+                <div class="layui-input-block">
+                    <input class="layui-input" type="text" name="title" placeholder="请输入邮政编码" style="width: 200px">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">联系方式</label>
+                <div class="layui-input-block">
+                    <input class="layui-input" type="text" name="title" placeholder="请输入联系方式" style="width: 200px">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">邮箱</label>
+                <div class="layui-input-block">
+                    <input class="layui-input" type="text" name="title" placeholder="请输入邮箱" style="width: 200px">
+                </div>
+            </div>
+            <div style="text-align: center">
+                <button class="layui-btn layui-btn-normal layui-btn-lg" style="float: left;margin-left:100px">提交</button>
+                <button class="layui-btn layui-btn-normal layui-btn-lg closebtn" style="float: right;margin-right:100px">取消</button>
+            </div>
+        </form>
+    <!-- 修改表单-->
+    <form class="" id="edit_add" style="display: none">
+        <div class="layui-form-item">
+            <label class="layui-form-label">用户账号</label>
+            <div class="layui-input-block">
+                <input class="layui-input" type="text" name="title" placeholder="请输入用户账号" style="width: 200px">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">用户名称</label>
+            <div class="layui-input-block">
+                <input class="layui-input" type="text" name="title" placeholder="请输入用户名称" style="width: 200px">
+            </div>
+        </div>
+        <div class="">
+            <select name="role" lay-verify="">
+                <option value="">请选择</option>
+                <option value="0">卫生局</option>
+                <option value="0">卫生院</option>
+                <option value="0">卫生室</option>
+                <option value="0">监督者</option>
+                <option value="0">管理员</option>
+            </select>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">所在单位</label>
+            <div class="layui-input-block">
+                <input class="layui-input" type="text" name="title" placeholder="请输入所在单位" style="width: 200px">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">联系地址</label>
+            <div class="layui-input-block">
+                <input class="layui-input" type="text" name="title" placeholder="请输入联系地址" style="width: 200px">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">邮政编码</label>
+            <div class="layui-input-block">
+                <input class="layui-input" type="text" name="title" placeholder="请输入邮政编码" style="width: 200px">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">联系方式</label>
+            <div class="layui-input-block">
+                <input class="layui-input" type="text" name="title" placeholder="请输入联系方式" style="width: 200px">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">邮箱</label>
+            <div class="layui-input-block">
+                <input class="layui-input" type="text" name="title" placeholder="请输入邮箱" style="width: 200px">
+            </div>
+        </div>
+        <div style="text-align: center">
+            <button class="layui-btn layui-btn-normal layui-btn-lg" style="float: left;margin-left:100px">提交</button>
+            <button class="layui-btn layui-btn-normal layui-btn-lg closebtn" style="float: right;margin-right:100px">取消</button>
+        </div>
+    </form>
 </div>
 </body>
 </html>
