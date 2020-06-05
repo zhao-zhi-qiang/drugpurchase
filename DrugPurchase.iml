@@ -22,6 +22,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="jquery-1.10.2" level="application" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-devtools:2.1.4.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot:2.1.4.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-context:5.1.6.RELEASE" level="project" />
@@ -87,7 +88,7 @@
     <orderEntry type="module-library">
       <library name="Maven: com.alibaba:jconsole:1.8.0">
         <CLASSES>
-          <root url="jar://D:/Java/JAVA/jdk1.8.0_92/lib/jconsole.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_181/lib/jconsole.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -96,7 +97,7 @@
     <orderEntry type="module-library">
       <library name="Maven: com.alibaba:tools:1.8.0">
         <CLASSES>
-          <root url="jar://D:/Java/JAVA/jdk1.8.0_92/lib/tools.jar!/" />
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_181/lib/tools.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -134,6 +135,5 @@
     <orderEntry type="library" name="Maven: org.webjars:jquery:3.3.1" level="project" />
     <orderEntry type="library" name="Maven: org.webjars:bootstrap:4.0.0" level="project" />
     <orderEntry type="library" name="Maven: org.webjars.npm:popper.js:1.11.1" level="project" />
-    <orderEntry type="library" name="jquery-1.10.2" level="application" />
   </component>
 </module>

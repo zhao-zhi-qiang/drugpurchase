@@ -1,14 +1,12 @@
-
 <html>
-
 <head>
     <!-- 页面meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>监督管理系统</title>
     <!-- Tell the browser to be responsive to screen width -->
-    <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
-    <!-- 页面meta /-->
+   <!-- <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
+    &lt;!&ndash; 页面meta /&ndash;&gt;
     <link rel="stylesheet" href="js/plugins/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../adminLTE/css/AdminLTE.css">
     <link rel="stylesheet" href="../adminLTE/css/skins/_all-skins.min.css">
@@ -18,10 +16,10 @@
     <script src="js/plugins/bootstrap/js/bootstrap.min.js"></script>
 
     <link rel="stylesheet" href="../angularjs/toaster.min.css">
-   <!-- <script type="text/javascript" src="../angularjs/angular.min.js"></script>-->
-    <!--<script type="text/javascript" src="../angularjs/angular-animate.min.js"></script>-->
-    <!--<script type="text/javascript" src="../angularjs/toaster.min.js"></script>-->
-    <!--<script type="text/javascript" src="js/base.js"></script>-->
+   &lt;!&ndash; <script type="text/javascript" src="../angularjs/angular.min.js"></script>&ndash;&gt;
+    &lt;!&ndash;<script type="text/javascript" src="../angularjs/angular-animate.min.js"></script>&ndash;&gt;
+    &lt;!&ndash;<script type="text/javascript" src="../angularjs/toaster.min.js"></script>&ndash;&gt;
+    &lt;!&ndash;<script type="text/javascript" src="js/base.js"></script>&ndash;&gt;
     <script src="../adminLTE/js/app.min.js"></script>
 
 
@@ -35,30 +33,31 @@
         }
 
     </script>
-
+-->
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini"
       ng-init="getUserName();getRoleName()">
 
+<!--
 <div class="wrapper">
 
-    <!-- 页面头部 -->
+    &lt;!&ndash; 页面头部 &ndash;&gt;
     <header class="main-header">
-        <!-- Logo -->
+        &lt;!&ndash; Logo &ndash;&gt;
         <a href="index.html" class="logo">
-            <!-- logo for regular state and mobile devices -->
+            &lt;!&ndash; logo for regular state and mobile devices &ndash;&gt;
             <span class="logo-lg"><b>药品采购平台</b>监督管理</span>
         </a>
-        <!-- Header Navbar: style can be found in header.less -->
+        &lt;!&ndash; Header Navbar: style can be found in header.less &ndash;&gt;
         <nav class="navbar navbar-static-top">
-            <!-- Sidebar toggle button-->
+            &lt;!&ndash; Sidebar toggle button&ndash;&gt;
             <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
                 <span class="glyphicon glyphicon-chevron-left"></span>
             </a>
             <div class="navbar-custom-menu">
                 <ul class="nav navbar-nav">
-                    <!-- User Account: style can be found in dropdown.less -->
+                    &lt;!&ndash; User Account: style can be found in dropdown.less &ndash;&gt;
                     <li class="dropdown user user-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             欢迎你，<span class="hidden-xs">*****</span>
@@ -76,13 +75,13 @@
             </div>
         </nav>
     </header>
-    <!-- 页面头部 /-->
+    &lt;!&ndash; 页面头部 /&ndash;&gt;
 
-    <!-- 导航侧栏 -->
+    &lt;!&ndash; 导航侧栏 &ndash;&gt;
     <aside class="main-sidebar">
-        <!-- sidebar: style can be found in sidebar.less -->
+        &lt;!&ndash; sidebar: style can be found in sidebar.less &ndash;&gt;
         <section class="sidebar">
-            <!-- Sidebar user panel -->
+            &lt;!&ndash; Sidebar user panel &ndash;&gt;
             <div class="user-panel">
                 <div class="pull-left image">
                     <img src="../images/user2-160x160.jpg" class="img-circle" alt="User Image">
@@ -95,7 +94,7 @@
             <ul class="sidebar-menu">
                 <li class="header">菜单</li>
                 <li id="admin-index"><a href="/"><i class="fa fa-dashboard"></i> <span>首页</span></a></li>
-                <li class="treeview"  ng-if="true"><!-- ng-if="isInArray(rolenames,'KEZHANG')||isInArray(rolenames,'KESHICAOZUO')" -->
+                <li class="treeview"  ng-if="true">&lt;!&ndash; ng-if="isInArray(rolenames,'KEZHANG')||isInArray(rolenames,'KESHICAOZUO')" &ndash;&gt;
                     <a href="#">
                         <i class="fa fa-folder"></i>
                         <span>药品目录管理</span>
@@ -116,8 +115,8 @@
                         </li>
                     </ul>
                 </li>
-                <!-- 菜单 -->
-                <li class="treeview" ng-if="true"><!-- ng-if="isInArray(rolenames,'KEZHANG')||isInArray(rolenames,'KESHICAOZUO')" -->
+                &lt;!&ndash; 菜单 &ndash;&gt;
+                <li class="treeview" ng-if="true">&lt;!&ndash; ng-if="isInArray(rolenames,'KEZHANG')||isInArray(rolenames,'KESHICAOZUO')" &ndash;&gt;
                     <a href="#">
                         <i class="fa fa-folder"></i>
                         <span>采购管理</span>
@@ -133,7 +132,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="treeview" ng-if="true" ><!-- ng-if="isInArray(rolenames,'KEZHANG')" -->
+                <li class="treeview" ng-if="true" >&lt;!&ndash; ng-if="isInArray(rolenames,'KEZHANG')" &ndash;&gt;
                     <a href="#">
                         <i class="fa fa-folder"></i>
                         <span>供货管理</span>
@@ -149,7 +148,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="treeview" ng-if="true" ><!-- ng-if="isInArray(rolenames,'KEZHANG')||isInArray(rolenames,'KESHICAOZUO')" -->
+                <li class="treeview" ng-if="true" >&lt;!&ndash; ng-if="isInArray(rolenames,'KEZHANG')||isInArray(rolenames,'KESHICAOZUO')" &ndash;&gt;
                     <a href="#">
                         <i class="fa fa-folder"></i>
                         <span>交易查询统计</span>
@@ -195,29 +194,33 @@
                 </li>
             </ul>
         </section>
-        <!-- /.sidebar -->
+        &lt;!&ndash; /.sidebar &ndash;&gt;
     </aside>
-    <!-- 导航侧栏 /-->
+    &lt;!&ndash; 导航侧栏 /&ndash;&gt;
 
-    <!-- 内容区域 -->
+    &lt;!&ndash; 内容区域 &ndash;&gt;
     <div class="content-wrapper">
         <iframe width="100%" id="iframe" name="iframe" onload="SetIFrameHeight()"
                 frameborder="0" src="login"></iframe>
     </div>
-    <!-- 内容区域 /-->
+    &lt;!&ndash; 内容区域 /&ndash;&gt;
 
-    <!-- 底部导航 -->
+    &lt;!&ndash; 底部导航 &ndash;&gt;
     <footer class="main-footer">
         <div class="pull-right hidden-xs">
             <b>Version</b> 1.0.8
         </div>
         <strong>Copyright &copy; 2019-2020 <a href="http://www.itcast.cn"></a>.</strong> All rights reserved.
     </footer>
-    <!-- 底部导航 /-->
+    &lt;!&ndash; 底部导航 /&ndash;&gt;
 
 </div>
+-->
 
-
+<h1><a href="/userControl">用户管理页面</a></h1>
+<h1><a href="/supervisory_management_index">监督管理系统</a></h1>
+<h1><a href="/userControl">药品采购系统</a></h1>
+<h1><a href="/userControl">供货管理系统</a></h1>
 </body>
 
 </html>
